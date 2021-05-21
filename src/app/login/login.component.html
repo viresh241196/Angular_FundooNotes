@@ -1,6 +1,6 @@
 <div class="container">
   <div class="box">
-    <form #login="ngForm" class="form-text">
+    <form class="form-text" [formGroup]="loginform" (ngSubmit)="onSubmit()">
       <div>
         <h1 class="h1-header">
           <span class="F-color">F</span>
@@ -14,15 +14,15 @@
         <h3 class="header">User your Google Account</h3>
       </div>
       <div>
-        <mat-form-field appearance="outline" class="w-100">
+        <mat-form-field appearance="outline" class="w-100" >
           <mat-label>Email</mat-label>
-          <input matInput />
+          <input matInput ngModel formControlName="email"/>
         </mat-form-field>
         <div>
           <div>
             <mat-form-field appearance="outline" class="w-100">
               <mat-label>Enter your password</mat-label>
-              <input matInput [type]="hide ? 'password' : 'text'" />
+              <input formControlName="password" matInput [type]="hide ? 'password' : 'text'" />
               <button
                 mat-icon-button
                 matSuffix
@@ -37,8 +37,8 @@
           <label for="">Forgot password?</label>
         </div>
         <div class="submit-row">
-          <button class="button2">Sign in instead</button>
-          <button class="button1">Next</button>
+          <a class="button2">Sign in instead</a>
+          <button type="submit" class="button1">Next</button>
         </div>
       </div>
     </form>

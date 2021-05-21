@@ -1,48 +1,102 @@
-.example-form {
-  min-width: 150px;
-  max-width: 500px;
-  width: 100%;
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .box {
+    width: 40%;
+    padding: 60px 30px;
+    display: flex;
+    border-radius: 8px;
+    border: 1px solid #dadce0;
+  }
+}
+.input-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   box-shadow: 0px 3px 6px #00000029;
   border: 1px solid #f5f5f5;
-}
-.box{
-    padding-top: 7%;
-    display: flex;
-    justify-content: center;
-}
-.input-box{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    box-shadow: 0px 3px 6px #00000029;
-    border: 1px solid #f5f5f5;
 }
 .example-full-width {
   width: 100%;
 }
-.form-header {
-    display: flex;
+.h1-header {
+  font-weight: bold;
+  text-align: center;
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+.header{
+  text-align: center;
+}
+
+.example-button-row {
+  display: table-cell;
+  width: 490px;
+  color: rgb(75, 75, 240);
+}
+
+.example-button-row .mat-button-base {
+  margin: 8px 8px 8px 0;
+}
+.button {
+  width: 20%;
+  display: flex;
   flex-direction: row;
   justify-content: center;
 }
 
-.example-button-row {
-    display: table-cell;
-    width: 490px;
-    color: rgb(75, 75, 240);
-  }
-  
-  .example-button-row .mat-button-base {
-    margin: 8px 8px 8px 0;
-  }
-  .button{
-      width: 20%;
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-  }
+.button-position {
+  display: flex;
+  justify-content: flex-end;
+}
+.w-48 {
+  width: 48%;
+}
+.w-100 {
+  width: 100%;
+}
+.submit-row {
+  display: flex;
+  justify-content: space-between;
+}
+.button1 {
+  background-color: #1a73e8;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 1px 3px 0px #aba5a5;
+  cursor: pointer;
+}
+.button2 {
+  background-color: transparent;
+  color: #0f8ae2;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+.form-text{
+  width: 100%;
+}
 
-  .button-position{
-    display: flex;
-    justify-content: flex-end;
-  }
+.F-color{
+  color: skyblue;
+}
+.u-color{
+  color: yellow;
+}
+.n-color{
+  color: green;
+}
+.d-color{
+  color: tomato;
+}
+.o-color{
+  color: blue;
+}
+.o-color{
+  color: orange;
+}

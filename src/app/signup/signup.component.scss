@@ -12,14 +12,40 @@
     border: 1px solid #dadce0;
   }
 
-  .w-48 {
-    width: 48%;
-  }
-  .w-100 {
-    width: 100%;
-  }
 }
 
+.w-48 {
+  width: 48%;
+}
+.w-100 {
+  width: 100%;
+}
+.h1-header {
+  font-weight: bold;
+  text-align: center;
+  font-size: 18px;
+  letter-spacing: 2px;
+  display: flex;
+  justify-content: center;
+}
+.F-color{
+  color: skyblue;
+}
+.u-color{
+  color: yellow;
+}
+.n-color{
+  color: green;
+}
+.d-color{
+  color: tomato;
+}
+.o-color{
+  color: blue;
+}
+.o-color{
+  color: orange;
+}
 .form {
   min-width: 150px;
   max-width: 500px;

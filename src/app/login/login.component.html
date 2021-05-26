@@ -23,16 +23,16 @@
             <mat-form-field appearance="outline" class="w-100">
               <mat-label>Enter your password</mat-label>
               <input formControlName="password" matInput [type]="hide ? 'password' : 'text'" />
-              <button
-                mat-icon-button
-                matSuffix
-                (click)="hide = !hide"
-                [attr.aria-label]="'Hide password'"
-                [attr.aria-pressed]="hide"
-              >
-                {{ hide ? "show" : "hide" }}
-              </button>
             </mat-form-field>
+            <button
+            mat-icon-button
+            matSuffix
+            (click)="hide = !hide"
+            [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide"
+          >
+            {{ hide ? "show" : "hide" }}
+          </button>
           </div>
           <label for="">Forgot password?</label>
         </div>

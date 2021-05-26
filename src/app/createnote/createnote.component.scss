@@ -1,0 +1,23 @@
+.card {
+  display: flex;
+  justify-content: center;
+  //   width: 60%;
+  border: 1px solid;
+  align-content: flex-start;
+}
+
+.inner-card {
+  width: 40%;
+  margin: auto;
+}
+
+.form-text {
+  display: flex;
+  flex-direction: column;
+}
+.create{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 70%;
+}

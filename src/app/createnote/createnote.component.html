@@ -1,0 +1,33 @@
+
+<div class="inner-card">
+  <div>
+    <mat-card
+      class="card  "
+      *ngIf="!clicked"
+      (click)="clicked = !clicked"
+    >
+      <div class="create">
+        <p class="title-text">Take a note...</p>
+        <img src="..\assets\create_black_24dp.svg" alt="">
+      </div>
+    </mat-card>
+  </div>
+  <div class="inner-card">
+    <mat-card 
+      *ngIf="clicked"
+      class="card">
+      <form class="form-text" [formGroup]="getform" (ngSubmit)="submit()">
+        <mat-form-field>
+          <mat-label>Title</mat-label>
+          <input type="text" matInput placeholder="Title" formControlName="title"/>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Description</mat-label>
+          <input type="text" matInput placeholder="Description" formControlName="description"/>
+        </mat-form-field>
+          <button type="submit">submit</button>
+      </form>
+    </mat-card>
+  </div>
+</div>

@@ -3,13 +3,13 @@
     <div>
     <form action="" [formGroup]="signupform" (ngSubmit)="onSubmit()">
       <div>
-        <h1 for="" class="form-header">
-          <span>F</span>
-          <span>u</span>
-          <span>n</span>
-          <span>d</span>
-          <span>o</span>
-          <span>o</span>
+        <h1 class="h1-header">
+          <span class="F-color">F</span>
+          <span class="u-color">u</span>
+          <span class="n-color">n</span>
+          <span class="d-color">d</span>
+          <span class="o-color">o</span>
+          <span class="o-color">o</span>
         </h1>
         <h1 class="header-text">Create your Google Account</h1>
       </div>
@@ -36,21 +36,22 @@
           <mat-form-field appearance="outline" class="w-48">
             <mat-label>Enter your password</mat-label>
             <input formControlName="password1" matInput [type]="hide ? 'password' : 'text'" />
-            <button
-              mat-icon-button
-              matSuffix
-              (click)="hide = !hide"
-              [attr.aria-label]="'Hide password'"
-              [attr.aria-pressed]="hide"
-            >
-              {{ hide ? "show" : "hide" }}
-            </button>
           </mat-form-field>
+  
           <mat-form-field appearance="outline" class="w-48">
             <mat-label>Confirm password</mat-label>
             <input formControlName="password2" matInput type="password" />
           </mat-form-field>
         </div>
+        <button
+        mat-icon-button
+        matSuffix
+        (click)="hide = !hide"
+        [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide"
+      >
+        {{ hide ? "show" : "hide" }}
+      </button>
         <h5>
           <p>
             Use 8 or more characters with a mix of letters, numbers & symbols

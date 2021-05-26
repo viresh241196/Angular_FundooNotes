@@ -1,0 +1,14 @@
+<div class="container">
+  <mat-card *ngFor="let note of notesArray">
+    <mat-card-title>{{ note.title }}</mat-card-title>
+    <mat-card-content>
+      <p class="card-description">
+        {{ note.description }}
+      </p>
+      <img src="..\assets\delete_outline_black_24dp.svg" alt="">
+      <img src="..\assets\color_lens_black_24dp.svg" alt="">
+      <img src="..\assets\archive_black_24dp.svg" alt="" (click)="callArchive(note)">
+      <img src="..\assets\more_black_24dp.svg" alt="">
+    </mat-card-content>
+  </mat-card>
+</div>

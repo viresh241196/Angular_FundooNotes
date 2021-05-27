@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { NoteService } from "../services/note.service";
+import { NoteService } from "../../services/note.service";
 
 
 @Component({
@@ -18,7 +18,12 @@ export class GetallnoteComponent implements OnInit {
   getAllNotes() {
     this.noteService.getAllNotes().subscribe((resp: any) => {
       console.log(resp.data.data);
-      this.AllNotes = resp.data.data;
+      let list = resp.data.data
+      for (let Item of list){
+        if(!Item.isDeleted && !Item.isArchived)
+        this.AllNotes.push(Item)
+      }
+      // this.AllNotes=resp.data.data
     });
   }
 

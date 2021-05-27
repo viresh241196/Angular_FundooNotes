@@ -22,4 +22,8 @@ export class NoteService {
   addToArcheive(data:any) {
     return this.httpservice.Post("/notes/archiveNotes/",data);
   }
+
+  addToTrash(data:any) {
+    return this.httpservice.Post("/notes/trashNotes/",data);
+  }
 }

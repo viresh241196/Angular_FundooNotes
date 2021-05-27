@@ -17,13 +17,8 @@
       [fixedInViewport]="mobileQuery.matches"
       fixedTopGap="56"
     >
-      <!-- <mat-nav-list style="width: 250px " >
-        <a mat-list-item routerLink="." *ngFor="let nav of fillerNav">{{
-          nav
-        }}</a>
-      </mat-nav-list> -->
-      <mat-nav-list style="width: 250px ">
-        <a mat-list-item routerLink=".">
+      <mat-nav-list style="width: 250px">
+        <a mat-list-item routerLink="/dashboard/note">
           <img
             src="..\assets\lightbulb_black_24dp.svg"
             width="30px"
@@ -32,8 +27,8 @@
           />Notes
         </a>
       </mat-nav-list>
-      <mat-nav-list style="width: 250px ">
-        <a mat-list-item routerLink=".">
+      <mat-nav-list style="width: 250px">
+        <a mat-list-item routerLink="/dashboard/trash">
           <img
             src="..\assets\delete_outline_black_24dp.svg"
             width="30px"
@@ -42,7 +37,7 @@
           />Trash
         </a>
       </mat-nav-list>
-      <mat-nav-list style="width: 250px ">
+      <mat-nav-list style="width: 250px">
         <a mat-list-item routerLink=".">
           <img
             src="..\assets\create_black_24dp.svg"
@@ -52,8 +47,8 @@
           />Edit-Label
         </a>
       </mat-nav-list>
-      <mat-nav-list style="width: 250px ">
-        <a mat-list-item routerLink=".">
+      <mat-nav-list style="width: 250px">
+        <a mat-list-item routerLink="/dashboard/archieveNote">
           <img
             src="..\assets\archive_black_24dp.svg"
             width="30px"
@@ -62,7 +57,7 @@
           />Archieve
         </a>
       </mat-nav-list>
-      <mat-nav-list style="width: 250px ">
+      <mat-nav-list style="width: 250px">
         <a mat-list-item routerLink=".">
           <img
             src="..\assets\add_alert_black_24dp.svg"
@@ -74,7 +69,7 @@
       </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>
-        <router-outlet></router-outlet>
+      <router-outlet></router-outlet>
     </mat-sidenav-content>
   </mat-sidenav-container>
 </div>

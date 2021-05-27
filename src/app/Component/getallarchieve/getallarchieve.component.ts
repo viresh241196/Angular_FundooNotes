@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { NoteService } from "../services/note.service";
+import { NoteService } from "../../services/note.service";
 
 @Component({
   selector: "app-getallarchieve",
@@ -15,8 +15,10 @@ export class GetallarchieveComponent implements OnInit {
   }
 
   getAllArchieve() {
-    this.noteService.getAllArchieve().subscribe((res) => {
-      console.log(res);
+    this.noteService.getAllArchieve().subscribe((res: any) => {
+      console.log(res.data.data);
+      this.AllNotes = res.data.data;
     });
   }
+
 }

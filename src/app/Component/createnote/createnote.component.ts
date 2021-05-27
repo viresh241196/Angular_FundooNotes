@@ -1,6 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
-import { NoteService } from "../services/note.service";
+import { NoteService } from "../../services/note.service";
 
 @Component({
   selector: "app-createnote",
@@ -31,7 +31,7 @@ export class CreatenoteComponent implements OnInit {
       description: this.getform.value.description,
     };
     this.noteService.createNote(data).subscribe((res) => {
-      console.log(res);
+      console.log(res); 
       this.EventToGetAllNotes.emit();
     });
     this.clicked = false;

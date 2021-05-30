@@ -21,6 +21,7 @@ export class HttpService {
     };
     return this.httpclient.post(this.starturl + link, data, options);
   }
+  
   Get(link: string) {
      this.token = localStorage.getItem("token");
     let options = {

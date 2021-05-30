@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 import { NoteService } from "../services/note.service";
 
 @Component({
@@ -8,6 +8,8 @@ import { NoteService } from "../services/note.service";
 })
 export class IconComponent implements OnInit {
   @Input() card: any;
+  @Output() refreshCauseDeleted = new EventEmitter<string>();
+  @Output() refreshCauseArchieve = new EventEmitter<string>();
   constructor(private noteService: NoteService) {}
 
   ngOnInit(): void {}
@@ -21,6 +23,8 @@ export class IconComponent implements OnInit {
     console.log(data);
     this.noteService.addToArcheive(data).subscribe((res) => {
       console.log(res);
+      this.refreshCauseArchieve.emit();
+      location.reload();
     });
   }
 
@@ -32,6 +36,7 @@ export class IconComponent implements OnInit {
     };
     this.noteService.addToTrash(data).subscribe((res) => {
       console.log(res);
+      this.refreshCauseDeleted.emit();
     });
   }
 }

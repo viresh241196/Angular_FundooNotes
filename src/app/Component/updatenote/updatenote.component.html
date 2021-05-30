@@ -1,0 +1,29 @@
+
+<div class="box">
+  <mat-card >
+    <form class="form-text" [formGroup]="getform" (ngSubmit)="submit()">
+      <mat-form-field>
+        <mat-label>Title</mat-label><h3>
+        <input
+          type="text"
+          matInput
+          placeholder="Title"
+          formControlName="title"
+          [(ngModel)]="obj.title"
+        /></h3>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <mat-label>Description</mat-label>
+        <textarea
+          type="text"
+          matInput
+          placeholder="Description"
+          formControlName="description"
+          [(ngModel)]="obj.description"
+        ></textarea>
+      </mat-form-field><br>
+      <button class="button" type="submit">close</button>
+    </form>
+  </mat-card>
+</div>

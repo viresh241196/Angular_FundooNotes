@@ -19,11 +19,15 @@ export class NoteService {
     return this.httpservice.Get("/notes/getArchiveNotesList/");
   }
 
-  addToArcheive(data:any) {
-    return this.httpservice.Post("/notes/archiveNotes/",data);
+  addToArcheive(data: any) {
+    return this.httpservice.Post("/notes/archiveNotes/", data);
   }
 
-  addToTrash(data:any) {
-    return this.httpservice.Post("/notes/trashNotes/",data);
+  addToTrash(data: any) {
+    return this.httpservice.Post("/notes/trashNotes/", data);
+  }
+
+  updateNote(data: any) {
+    return this.httpservice.Post("/notes/updateNotes", data);
   }
 }

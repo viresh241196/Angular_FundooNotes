@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from "@angular/core";
 import { NoteService } from "../../services/note.service";
+import { MatDialog } from "@angular/material/dialog";
+import { UpdatenoteComponent } from "../updatenote/updatenote.component";
 
 @Component({
   selector: "app-display",
@@ -7,8 +9,8 @@ import { NoteService } from "../../services/note.service";
   styleUrls: ["./display.component.scss"],
 })
 export class DisplayComponent implements OnInit {
-  @Input() notesArray: any = [];
-  constructor(private noteService: NoteService) {}
+  @Input() notesArray: any;
+  constructor(private noteService: NoteService, public dialog: MatDialog) {}
 
   ngOnInit(): void {
     console.log(this.notesArray);
@@ -29,4 +31,17 @@ export class DisplayComponent implements OnInit {
   // callTrash(note: any) {
   //   console.log(note);
   // }
+
+  edit(note: any) {
+    const dialogRef = this.dialog.open(UpdatenoteComponent, {
+      data: {
+        note,
+      },
+    });
+    dialogRef.afterClosed().subscribe((result: any) => {
+      console.log("The dialog was closed");
+    });
+  }
+
+
 }

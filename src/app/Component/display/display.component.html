@@ -1,11 +1,14 @@
+
 <div class="container">
   <mat-card class="mat" *ngFor="let note of notesArray">
+    <div (click)="edit(note)">
     <mat-card-title>{{ note.title }}</mat-card-title>
     <mat-card-content>
       <p class="card-description">
         {{ note.description }}
       </p>
     </mat-card-content>
+  </div>
     <app-icon [card]="note"></app-icon>
   </mat-card>
 </div>

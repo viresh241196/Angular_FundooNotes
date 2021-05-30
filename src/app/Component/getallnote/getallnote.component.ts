@@ -1,7 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { NoteService } from "../../services/note.service";
 
-
 @Component({
   selector: "app-getallnote",
   templateUrl: "./getallnote.component.html",
@@ -9,6 +8,7 @@ import { NoteService } from "../../services/note.service";
 })
 export class GetallnoteComponent implements OnInit {
   AllNotes: any = [];
+  filterNotes: any = [];
   constructor(private noteService: NoteService) {}
 
   ngOnInit(): void {
@@ -18,17 +18,27 @@ export class GetallnoteComponent implements OnInit {
   getAllNotes() {
     this.noteService.getAllNotes().subscribe((resp: any) => {
       console.log(resp.data.data);
-      let list = resp.data.data
-      for (let Item of list){
-        if(!Item.isDeleted && !Item.isArchived)
-        this.AllNotes.push(Item)
-      }
-      // this.AllNotes=resp.data.data
+      // let list = resp.data.data;
+      // for (let Item of list){
+      //   if(! Item.isDeleted && !Item.isArchived)
+      //   this.AllNotes.push(Item)
+      // }
+      this.filterNotes = resp.data.data;
+      this.filterNotes.filter((data: any) => {
+        if (!data.isDeleted && !data.isArchived) {
+          this.AllNotes.push(data);
+        }
+      });
+      console.log(this.AllNotes);
     });
   }
 
   getmessage() {
     console.log("refresh notes");
+    this.getAllNotes();
+  }
+
+  refreshList(){
     this.getAllNotes();
   }
 }

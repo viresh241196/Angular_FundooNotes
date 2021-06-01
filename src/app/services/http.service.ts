@@ -11,22 +11,22 @@ export class HttpService {
   token: any;
 
   Post(link: string, data: any) {
-     this.token = localStorage.getItem("token");
+    this.token = localStorage.getItem("token");
     console.log(this.token);
     let options = {
       headers: new HttpHeaders({
-        'Authorization': this.token,
+        Authorization: this.token ? this.token : "",
         "Content-Type": "application/json",
       }),
     };
     return this.httpclient.post(this.starturl + link, data, options);
   }
-  
+
   Get(link: string) {
-     this.token = localStorage.getItem("token");
+    this.token = localStorage.getItem("token");
     let options = {
       headers: new HttpHeaders({
-        'Authorization': this.token,
+        Authorization: this.token ? this.token : "",
         "Content-Type": "application/json",
       }),
     };

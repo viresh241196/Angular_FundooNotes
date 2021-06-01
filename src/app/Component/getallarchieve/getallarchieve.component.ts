@@ -8,6 +8,7 @@ import { NoteService } from "../../services/note.service";
 })
 export class GetallarchieveComponent implements OnInit {
   AllNotes: any = [];
+  isArchieve = true;
   constructor(private noteService: NoteService) {}
 
   ngOnInit(): void {
@@ -20,5 +21,4 @@ export class GetallarchieveComponent implements OnInit {
       this.AllNotes = res.data.data;
     });
   }
-
 }

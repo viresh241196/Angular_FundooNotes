@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 import { NoteService } from "../../services/note.service";
 import { MatDialog } from "@angular/material/dialog";
 import { UpdatenoteComponent } from "../updatenote/updatenote.component";
@@ -10,6 +10,9 @@ import { UpdatenoteComponent } from "../updatenote/updatenote.component";
 })
 export class DisplayComponent implements OnInit {
   @Input() notesArray: any;
+  @Input() isArchieve : any;
+  @Input() isTrash : any;
+  @Output() transferToGetNotes = new EventEmitter<string>();
   constructor(private noteService: NoteService, public dialog: MatDialog) {}
 
   ngOnInit(): void {
@@ -43,5 +46,7 @@ export class DisplayComponent implements OnInit {
     });
   }
 
-
+  getmessage() {
+    this.transferToGetNotes.emit();
+  }
 }

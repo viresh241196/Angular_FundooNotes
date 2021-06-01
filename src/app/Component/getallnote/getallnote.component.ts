@@ -18,17 +18,19 @@ export class GetallnoteComponent implements OnInit {
   getAllNotes() {
     this.noteService.getAllNotes().subscribe((resp: any) => {
       console.log(resp.data.data);
-      // let list = resp.data.data;
-      // for (let Item of list){
-      //   if(! Item.isDeleted && !Item.isArchived)
-      //   this.AllNotes.push(Item)
-      // }
-      this.filterNotes = resp.data.data;
-      this.filterNotes.filter((data: any) => {
-        if (!data.isDeleted && !data.isArchived) {
-          this.AllNotes.push(data);
-        }
-      });
+      let list = resp.data.data;
+      this.AllNotes = [];
+      let temp = [];
+      for (let Item of list) {
+        if (!Item.isDeleted && !Item.isArchived) temp.push(Item);
+      }
+      this.AllNotes = temp.reverse();
+      // this.filterNotes = resp.data.data;
+      // this.filterNotes.filter((data: any) => {
+      //   if (!data.isDeleted && !data.isArchived) {
+      //     this.AllNotes.push(data);
+      //   }
+      // });
       console.log(this.AllNotes);
     });
   }
@@ -38,7 +40,8 @@ export class GetallnoteComponent implements OnInit {
     this.getAllNotes();
   }
 
-  refreshList(){
+  refreshList() {
+    console.log("refreshed via icon");
     this.getAllNotes();
   }
 }

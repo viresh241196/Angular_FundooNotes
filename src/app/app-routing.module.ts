@@ -6,13 +6,14 @@ import { DashboardComponent } from "./Component/dashboard/dashboard.component";
 import { GetallnoteComponent } from "./Component/getallnote/getallnote.component";
 import { GetallarchieveComponent } from "./Component/getallarchieve/getallarchieve.component";
 import { GetalltrashComponent } from "./Component/getalltrash/getalltrash.component";
+import { AuthenticationGuard } from "src/authentication/authentication.guard";
 
 const routes: Routes = [
   { path: "login", component: LoginComponent },
   { path: "signup", component: SignupComponent },
   {
     path: "dashboard",
-    component: DashboardComponent,
+    component: DashboardComponent,canActivate:[AuthenticationGuard],
     children: [
       { path: "", redirectTo: "note", pathMatch: "full" },
     { path: "note", component: GetallnoteComponent },

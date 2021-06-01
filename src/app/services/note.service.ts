@@ -18,6 +18,9 @@ export class NoteService {
   getAllArchieve() {
     return this.httpservice.Get("/notes/getArchiveNotesList/");
   }
+  getAllTrash() {
+    return this.httpservice.Get("/notes/getTrashNotesList/");
+  }
 
   addToArcheive(data: any) {
     return this.httpservice.Post("/notes/archiveNotes/", data);
@@ -29,5 +32,13 @@ export class NoteService {
 
   updateNote(data: any) {
     return this.httpservice.Post("/notes/updateNotes", data);
+  }
+
+  changeColor(data: any) {
+    return this.httpservice.Post("/notes/changesColorNotes", data);
+  }
+
+  callDelete(data: any) {
+    return this.httpservice.Post("/notes/deleteForeverNotes", data);
   }
 }

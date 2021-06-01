@@ -1,6 +1,6 @@
 
-<div class="inner-card">
-  <div>
+<div class="outter-card">
+  <div fxLayout="row" fxLayoutAlign="start stretch" >
     <mat-card
       class="card"
       *ngIf="!clicked"
@@ -12,21 +12,20 @@
       </div>
     </mat-card>
   </div>
-  <div class="inner-card">
+  <div class=" card">
     <mat-card 
       *ngIf="clicked"
-      class="card">
-      <form class="form-text" [formGroup]="getform" (ngSubmit)="submit()">
-        <mat-form-field>
-          <mat-label>Title</mat-label>
-          <input type="text" matInput placeholder="Title" formControlName="title"/>
-        </mat-form-field>
-
-        <mat-form-field>
-          <mat-label>Description</mat-label>
-          <input type="text" matInput placeholder="Description" formControlName="description"/>
-        </mat-form-field>
-          <button class="button" type="submit">close</button>
+      >
+      <form [formGroup]="getform" (ngSubmit)="submit()">
+      <div class="field"  fxLayout="row" fxLayoutAlign="start stretch">
+        <!-- <mat-form-field> -->
+          <input type="text" class="input1" placeholder="Title" formControlName="title"/>
+        <!-- </mat-form-field> -->
+        <!-- <mat-form-field> -->
+          <input type="text" class="input1" placeholder="Take a note..." formControlName="description"/>
+        <!-- </mat-form-field> -->
+        <button class="button" type="submit">close</button>
+      </div>
       </form>
     </mat-card>
   </div>

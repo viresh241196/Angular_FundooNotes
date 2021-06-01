@@ -1,15 +1,61 @@
-<div class="icon">
+<div class="icon" *ngIf="isTrash">
+  <img
+    src="..\assets\delete_forever_black_24dp.svg"
+    alt=""
+    (click)="callDeleteForever(card)"
+  />
+  <img src="..\assets\restore_from_trash_black_24dp.svg" alt="" (click)="callUnTrash(card)">
+</div>
+<div class="icon" *ngIf="!isTrash">
   <img src="..\assets\svg\reminder.svg" alt="" />
   <img
     src="..\assets\delete_outline_black_24dp.svg"
     alt=""
     (click)="callTrash(card)"
   />
-  <img src="..\assets\color_lens_black_24dp.svg" alt="" />
   <img
-    src="..\assets\archive_black_24dp.svg"
+    src="..\assets\color_lens_black_24dp.svg"
+    mat-button
+    [matMenuTriggerFor]="menu"
     alt=""
-    (click)="callArchive(card)"
   />
-  <img src="..\assets\more_black_24dp.svg" alt="" />
+  <mat-menu #menu="matMenu">
+    <div *ngFor="let arrayOfColors of colorList" class="align">
+      <div *ngFor="let backcolor of arrayOfColors">
+        <div
+          [ngStyle]="{ 'background-color': backcolor.color }"
+          class="color"
+          (click)="changecolor(backcolor.color, card)"
+        ></div>
+      </div>
+    </div>
+  </mat-menu>
+  <div *ngIf="!isArchieve">
+    <img
+      src="..\assets\archive_black_24dp.svg"
+      alt=""
+      (click)="callArchive(card)"
+    />
+  </div>
+  <div *ngIf="isArchieve">
+    <img
+      src="..\assets\unarchive_black_24dp.svg"
+      alt=""
+      (click)="callUnArchive(card)"
+    />
+  </div>
+  <img
+    src="..\assets\more_black_24dp.svg"
+    alt=""
+    mat-button
+    [matMenuTriggerFor]="menu2"
+  />
+  <mat-menu #menu2="matMenu">
+    <button mat-menu-item>Delete Note</button>
+    <button mat-menu-item>Add label</button>
+    <button mat-menu-item>Add drawing</button>
+    <button mat-menu-item>Make a copy</button>
+    <button mat-menu-item>Show checkboxes</button>
+    <button mat-menu-item>Copy to Google Docs</button>
+  </mat-menu>
 </div>

@@ -24,6 +24,10 @@ import { GetalltrashComponent } from "./Component/getalltrash/getalltrash.compon
 import { IconComponent } from "./icon/icon.component";
 import { MatDialogModule } from "@angular/material/dialog";
 import { UpdatenoteComponent } from './Component/updatenote/updatenote.component';
+import {MatMenuModule} from '@angular/material/menu';
+import { AuthguardService } from "./services/authguard.service";
+import { FlexLayoutModule } from '@angular/flex-layout';
+
 
 @NgModule({
   declarations: [
@@ -37,7 +41,8 @@ import { UpdatenoteComponent } from './Component/updatenote/updatenote.component
     GetallarchieveComponent,
     GetalltrashComponent,
     IconComponent,
-    UpdatenoteComponent,
+    UpdatenoteComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -54,8 +59,10 @@ import { UpdatenoteComponent } from './Component/updatenote/updatenote.component
     MatListModule,
     MatCardModule,
     MatDialogModule,
+    MatMenuModule,
+    FlexLayoutModule
   ],
-  providers: [],
+  providers: [AuthguardService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

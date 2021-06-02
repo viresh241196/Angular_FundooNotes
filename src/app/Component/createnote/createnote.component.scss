@@ -35,10 +35,10 @@
   justify-content: space-between;
   flex-direction: column;
 }
-// .input1{
-//   border: none;
-// padding: 15px;
-// }
+.input1{
+  border: none;
+padding: 15px;
+}
 
 .mat-form-field-appearance-outline .mat-form-field-outline-start .alignment {
   border-top-left-radius: 0px;
@@ -57,15 +57,17 @@
   font-weight: 700;
   color: darkgray;
 }
-.item {
-  width: 100%;
-}
 .w-75{
   width: 75%;
 }
 .w-25{
   width: 25%;
+  text-align: center;
 }
 .w-100{
   width: 100%;
+}
+
+::ng-deep .mat-form-field-underline {
+  display: none;
 }

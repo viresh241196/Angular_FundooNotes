@@ -1,5 +1,5 @@
-<div fxLayoutAlign="space-between center" class="w-100">
-  <div class="icon" *ngIf="isTrash">
+<div fxLayoutAlign="space-between center" >
+  <div class="icon w-100" fxLayout="row" fxLayoutAlign="space-between center" *ngIf="isTrash">
     <img
       src="..\assets\delete_forever_black_24dp.svg"
       alt=""
@@ -11,7 +11,7 @@
       (click)="callUnTrash(card)"
     />
   </div>
-  <div class="icon" *ngIf="!isTrash">
+  <div class="icon w-100" fxLayout="row" fxLayoutAlign="space-between center" *ngIf="!isTrash">
     <img src="..\assets\svg\reminder.svg" alt="" />
     <img
       src="..\assets\delete_outline_black_24dp.svg"

@@ -1,32 +1,116 @@
-
-<div class="outter-card">
-  <div fxLayout="row" fxLayoutAlign="start stretch" >
-    <mat-card
-      class="card"
-      *ngIf="!clicked"
-      (click)="clicked = !clicked"
-    >
-      <div class="create">
+<!-- <div
+  fxLayout="row"
+  fxLayoutAlign="center center "
+  style="margin-top: 15px"
+  #createCard
+> -->
+<!-- <div class="outter-card">
+    <div fxLayout="row" fxLayoutAlign="start stretch">
+      <mat-card class="card" *ngIf="!clicked" (click)="clicked = !clicked"> -->
+<!-- <mat-card
+    class="mat-elevation-z5 outline take-note-card"
+    *ngIf="!clicked"
+    (click)="clicked = !clicked"
+  >
+    <div fxLayout="row" fxLayoutAlign="space-between center">
+      <div>
         <p class="title-text">Take a note...</p>
-        <img src="..\assets\create_black_24dp.svg" alt="">
       </div>
-    </mat-card>
-  </div>
-  <div class=" card">
-    <mat-card 
-      *ngIf="clicked"
-      >
-      <form [formGroup]="getform" (ngSubmit)="submit()">
-      <div class="field"  fxLayout="row" fxLayoutAlign="start stretch">
-        <!-- <mat-form-field> -->
-          <input type="text" class="input1" placeholder="Title" formControlName="title"/>
-        <!-- </mat-form-field> -->
-        <!-- <mat-form-field> -->
-          <input type="text" class="input1" placeholder="Take a note..." formControlName="description"/>
-        <!-- </mat-form-field> -->
+      <div>
+        <img src="..\assets\create_black_24dp.svg" alt="" />
+      </div>
+    </div>
+  </mat-card>
+</div>
+<div class="card">
+  <mat-card *ngIf="clicked">
+    <form [formGroup]="getform" (ngSubmit)="submit()">
+      <div class="field" fxLayout="row" fxLayoutAlign="start stretch">
+        <mat-form-field>
+          <input
+            type="text"
+            class="input1"
+            placeholder="Title"
+            formControlName="title"
+          />
+        </mat-form-field>
+        <mat-form-field>
+          <input
+            type="text"
+            class="input1"
+            placeholder="Take a note..."
+            formControlName="description"
+          />
+        </mat-form-field>
         <button class="button" type="submit">close</button>
       </div>
-      </form>
-    </mat-card>
-  </div>
+    </form>
+  </mat-card>
+</div> -->
+<!-- </div>
+</div> -->
+
+<div
+  fxLayout="row"
+  fxLayoutAlign="center center"
+  style="margin-top: 15px"
+  #createCard
+>
+  <mat-card
+    class="mat-elevation-z5 outline take-note-card"
+    *ngIf="!clicked"
+    (click)="clicked = !clicked"
+  >
+    <div fxLayout="row" fxLayoutAlign="space-between center">
+      <div>
+        <p class="title-text">Take a note...</p>
+      </div>
+      <div>
+        <img
+          src="..\assets\create_black_24dp.svg"
+          width="30px"
+          height="30px"
+          style="background: #fff"
+        />
+      </div>
+    </div>
+  </mat-card>
+
+  <mat-card
+    *ngIf="clicked"
+    class="mat-elevation-z5 outline take-note-card"
+    fxLayout="column"
+  >
+    <form [formGroup]="getform" (ngSubmit)="submit()">
+      <div fxLayout="column">
+        <mat-form-field>
+          <mat-label>Title</mat-label>
+          <input
+            type="text"
+            matInput
+            formControlName="title"
+          />
+        </mat-form-field>
+
+        <mat-form-field>
+          <!-- <mat-label>Description</mat-label> -->
+          <input
+            type="text"
+            matInput
+            appearance="fill"
+            placeholder="description"
+            formControlName="description"
+          />
+        </mat-form-field>
+        <div fxLayout="row"  class="item">
+          <div class="w-75">
+            <app-icon class="w-100"></app-icon>
+          </div>
+          <div class="w-25">
+          <button type="button" class="button" (click)="submit()">Close</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </mat-card>
 </div>

@@ -31,7 +31,7 @@ export class CreatenoteComponent implements OnInit {
       description: this.getform.value.description,
     };
     this.noteService.createNote(data).subscribe((res) => {
-      console.log(res); 
+      console.log(res);
       this.EventToGetAllNotes.emit();
     });
     this.clicked = false;

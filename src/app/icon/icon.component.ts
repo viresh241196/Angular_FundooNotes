@@ -91,7 +91,11 @@ export class IconComponent implements OnInit {
 
   callDeleteForever(card: any) {
     console.log(card);
-    this.noteService.callDelete(card).subscribe((res) => {
+    let data = {
+      noteIdList: [this.card.id],
+      isDeleted: false,
+    };
+    this.noteService.callDelete(data).subscribe((res) => {
       console.log(res);
       this.refreshCauseColor.emit();
     });
